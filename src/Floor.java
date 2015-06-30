@@ -2,12 +2,27 @@
 public class Floor{
     private int currentFloor ; 
 	Door  door  = new Door();
-	 
-	public Floor(){
-		currentFloor = 0  ;
-		
+	FloorButton floorbutton = new FloorButton();
+	
+	Floor(){
+		currentFloor = 0;
 	}
 	
+	void selectOption(){
+		floorbutton.selectOption();
+	}
+	
+	public void openFloorDoor(){
+		door.opendoor();
+	}
+	
+	public void closeFloorDoor(){
+		door.closedoor();
+	}
+	
+	public String getFloorOption(){
+		return floorbutton.getOption();
+	}
 	
 	public Integer getCurrentFloorNumber() {
 		return currentFloor;

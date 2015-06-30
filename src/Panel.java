@@ -14,6 +14,7 @@ public class Panel {
 	
 	
 	void Click(){
+		display();
 		System.out.println("Enter a floor number:");
 		int option = scan.nextInt();
 		buttons.click(option);
