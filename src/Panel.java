@@ -13,7 +13,7 @@ public class Panel {
 	}
 	
 	
-	void panelDisplay(){
+	void Click(){
 		System.out.println("Enter a floor number:");
 		int option = scan.nextInt();
 		buttons.click(option);
