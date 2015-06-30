@@ -1,4 +1,4 @@
 
-public class Floor extends Door{
+public class Floor{
 
 }
