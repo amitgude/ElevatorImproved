@@ -18,4 +18,8 @@ public class Panel {
 		int option = scan.nextInt();
 		buttons.click(option);
 	}
+	
+	public int getSelectedFloor(){
+		return buttons.getValue();
+	}
 }
