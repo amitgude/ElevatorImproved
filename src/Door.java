@@ -13,13 +13,26 @@ Boolean estatus;
 	public void opendoor(){
 		
 		this.estatus=true;
-		System.out.println("Door Opening ...............");
+		System.out.println("elevator Door Opening");
+	}
+	
+	public void openFloordoor(){
+		
+		this.estatus=true;
+		System.out.println("Floor Door Opening ");
+	}
+	
+	
+public void closeFloordoor(){
+		
+		this.estatus=false;
+		System.out.println("Floor Door Closing ");
 	}
 	
 public void closedoor(){
 		
 		this.estatus=false;
-		System.out.println("Door Closing ...............");
+		System.out.println(" elevator Door Closing");
 	}
 
 }

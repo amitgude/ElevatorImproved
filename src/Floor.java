@@ -13,11 +13,11 @@ public class Floor{
 	}
 	
 	public void openFloorDoor(){
-		door.opendoor();
+		door.openFloordoor();
 	}
 	
 	public void closeFloorDoor(){
-		door.closedoor();
+		door.closeFloordoor();
 	}
 	
 	public String getFloorOption(){

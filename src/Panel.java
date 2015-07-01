@@ -9,7 +9,7 @@ public class Panel {
 	void display(){
 		System.out.println("Select a Floor :");
 		System.out.println("0 1 2 3 4 5 ");
-		System.out.println("6 7 8 9 10");
+		
 	}
 	
 	
