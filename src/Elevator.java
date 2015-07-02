@@ -36,8 +36,8 @@ public class Elevator {
 	}
 	
 	//method to call elevator
-	public void callElevator(int currentFloor){
-		floor.selectOption();
+	public void callElevator(int currentFloor , String opt ){
+		floor.selectOption(opt);
 		String option = floor.getFloorOption();
 		
 		if (option.equalsIgnoreCase("up")){

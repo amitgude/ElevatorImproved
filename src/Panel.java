@@ -7,8 +7,7 @@ public class Panel {
 	Scanner scan = new Scanner(System.in);
 	
 	void display(){
-		System.out.println("Select a Floor :");
-		System.out.println("0 1 2 3 4 5 ");
+		
 		
 	}
 	

@@ -4,12 +4,14 @@ public class Floor{
 	Door  door  = new Door();
 	FloorButton floorbutton = new FloorButton();
 	
+	
+	
 	Floor(){
 		currentFloor = 0;
 	}
 	
-	void selectOption(){
-		floorbutton.selectOption();
+	void selectOption(String option){
+		floorbutton.setOption(option);
 	}
 	
 	public void openFloorDoor(){
