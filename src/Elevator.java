@@ -5,8 +5,7 @@ public class Elevator {
 	Door  door  = new Door();
 	Floor floor = new Floor();
 	
-	String statusElevator;
-	
+	String elevStatus;
 	
 	//elevator movement
 	
@@ -17,59 +16,55 @@ public class Elevator {
 	}
 	
 	
-	public String elevMove(int userCurrentFloor){
+	public String elevMove(int currentFloor){
 		 
-		if (floor.getCurrentFloorNumber() > userCurrentFloor){
-			statusElevator="down";
+		if (floor.getCurrentFloorNumber() > currentFloor){
+			elevStatus = "down";
 		}
-		else if (floor.getCurrentFloorNumber() < userCurrentFloor){
-			statusElevator="up";
+		else if (floor.getCurrentFloorNumber() < currentFloor){
+			elevStatus = "up";
 		}
-		
-		floor.setCurrentFloorNumber(userCurrentFloor);
-		
+		floor.setCurrentFloorNumber(currentFloor);
 		
 		floor.openFloorDoor(); // opening floor door 
 		door.opendoor();        // opening elevator door 
 		
-		
 		floor.closeFloorDoor();
 		door.closedoor();
 		
-		return statusElevator;
+		return elevStatus;
 	}
 	
 	public int getElevatorFloor(){
 		return floor.getCurrentFloorNumber();
 	}
 	
-	
 	//method to call elevator
-	public void callElevator(int currentFloor){
+	public String callElevator(int currentFloor){
 		floor.selectOption();
 		String option = floor.getFloorOption();
 		
 		if (option.equalsIgnoreCase("up")){
-			elevMove(currentFloor);
+			elevStatus = elevMove(currentFloor);
 			
 		}
 		else if (option.equalsIgnoreCase("down")){
-			elevMove(currentFloor);
+			elevStatus = elevMove(currentFloor);
 		}
+			
+		return elevStatus;
 	}
-	
 	
 	//method to change floor
 	public String changeFloor(){
 	    panel.Click();
 		if ( getElevatorFloor() > panel.getSelectedFloor() ){
-			statusElevator="down";
+			elevStatus = "down";
 		}
 		else if ( getElevatorFloor() < panel.getSelectedFloor()){
-			statusElevator="up";
+			elevStatus = "up";
 		}
-		
-		
+				
 		floor.setCurrentFloorNumber(panel.getSelectedFloor());
 		
 		floor.openFloorDoor(); // opening floor door 
@@ -78,9 +73,7 @@ public class Elevator {
 		floor.closeFloorDoor();
 		door.closedoor();
 		
-		//System.out.println("You are on floor: "+floor.getCurrentFloorNumber());
-		return statusElevator;
-		
+		return elevStatus;
 	}
 	
 	
