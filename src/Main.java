@@ -13,10 +13,13 @@ public class Main {
 
 		currentFloor  =  3 ;
 		System.out.println("You are currently on floor : " +currentFloor);
+		
 		eleStatus =elevator.callElevator(currentFloor);
 		System.out.println("Lift is going "+ eleStatus);
+		
 		eleStatus =elevator.changeFloor();
 		System.out.println("Lift is going "+ eleStatus);
+		
 		System.out.println("Now you are on floor : " +elevator.getElevatorFloor());
 
 //		// scenario 2 
