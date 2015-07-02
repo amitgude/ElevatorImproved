@@ -1,23 +1,16 @@
-import java.util.Scanner;
+
 
 
 public class Panel {
 
-	Buttons buttons = new Buttons();
-	Scanner scan = new Scanner(System.in);
+	Button buttons = new Button();
 	
-	void display(){
-		
+	
+	public void setSelectedFloor(int  floorno){
+		buttons.setValue(floorno);
 		
 	}
-	
-	
-	void Click(){
-		display();
-		System.out.println("Enter a floor number:");
-		int option = scan.nextInt();
-		buttons.click(option);
-	}
+
 	
 	public int getSelectedFloor(){
 		return buttons.getValue();
