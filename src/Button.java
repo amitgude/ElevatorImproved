@@ -1,5 +1,5 @@
 
-public class Buttons {
+public class Button {
 
 	private Integer value;
 

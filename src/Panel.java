@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Panel {
 
-	Buttons buttons = new Buttons();
+	Button buttons = new Button();
 	Scanner scan = new Scanner(System.in);
 	
 	void display(){

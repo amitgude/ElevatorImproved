@@ -8,8 +8,6 @@ public class Main {
 		Elevator elevator = new Elevator();
 
 		// scenario 1 
-
-
 		currentFloor  =  3 ; 
 		elevator.callElevator(currentFloor);
 		elevator.changeFloor();
