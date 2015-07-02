@@ -5,6 +5,7 @@ public class Elevator {
 	Door  door  = new Door();
 	Floor floor = new Floor();
 	
+	String statusElevator;
 	
 	
 	//elevator movement
@@ -16,24 +17,32 @@ public class Elevator {
 	}
 	
 	
-	public void elevMove(int currentFloor){
+	public String elevMove(int userCurrentFloor){
 		 
-		if (floor.getCurrentFloorNumber() > currentFloor){
-			System.out.println(" >>>>> Lift coming down");
+		if (floor.getCurrentFloorNumber() > userCurrentFloor){
+			statusElevator="down";
 		}
-		else if (floor.getCurrentFloorNumber() < currentFloor){
-			System.out.println(" >>>>> Lift coming up");
+		else if (floor.getCurrentFloorNumber() < userCurrentFloor){
+			statusElevator="up";
 		}
+		
+		floor.setCurrentFloorNumber(userCurrentFloor);
+		
+		
 		floor.openFloorDoor(); // opening floor door 
 		door.opendoor();        // opening elevator door 
-		floor.setCurrentFloorNumber(currentFloor);
+		
+		
 		floor.closeFloorDoor();
 		door.closedoor();
+		
+		return statusElevator;
 	}
 	
 	public int getElevatorFloor(){
 		return floor.getCurrentFloorNumber();
 	}
+	
 	
 	//method to call elevator
 	public void callElevator(int currentFloor){
@@ -47,35 +56,30 @@ public class Elevator {
 		else if (option.equalsIgnoreCase("down")){
 			elevMove(currentFloor);
 		}
-		else{
-			System.out.println(" lift is on the same floor");
-		}
-		
-		
-		
 	}
 	
+	
 	//method to change floor
-	public void changeFloor(){
+	public String changeFloor(){
 	    panel.Click();
 		if ( getElevatorFloor() > panel.getSelectedFloor() ){
-			System.out.println(" lift is going down");
+			statusElevator="down";
 		}
 		else if ( getElevatorFloor() < panel.getSelectedFloor()){
-			System.out.println(" lift is going up");
-		}
-		else{
-			System.out.println(" lift is on the same floor");
+			statusElevator="up";
 		}
 		
+		
 		floor.setCurrentFloorNumber(panel.getSelectedFloor());
+		
 		floor.openFloorDoor(); // opening floor door 
 		door.opendoor();        // opening elevator door 
 		
 		floor.closeFloorDoor();
 		door.closedoor();
 		
-		System.out.println("You are on floor: "+floor.getCurrentFloorNumber());
+		//System.out.println("You are on floor: "+floor.getCurrentFloorNumber());
+		return statusElevator;
 		
 	}
 	
