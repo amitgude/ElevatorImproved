@@ -6,9 +6,25 @@ public class Elevator {
 	Floor floor = new Floor();
 	
 	String elevStatus;
-	
+	private static Elevator instance = null;
 	//elevator movement
 	
+	
+	private Elevator(){
+		
+	}
+	
+	public static Elevator getElevatorInstance(){
+		
+		if ( instance == null){
+			instance = new Elevator();
+		}
+		else{
+			return instance;
+		}
+		
+		return instance;
+	}
 	
 	public void setFloor(int floorno){
 		floor.setCurrentFloorNumber(floorno);
