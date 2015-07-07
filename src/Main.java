@@ -6,12 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//current floor is floor of user 
-
+		Elevator elevator;
     	Scanner scan = new Scanner(System.in);
 	    String option  ; 
 		int floorno ; 
 		int currentFloor;
-		Elevator elevator = new Elevator();
+		 elevator = Elevator.getElevatorInstance();
 		
 		String eleStatus;
 		
