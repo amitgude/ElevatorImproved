@@ -5,9 +5,15 @@ import org.junit.Test;
 
 public class ElevatorTest {
 
-	Elevator e = new Elevator() ; 
+	Elevator e = Elevator.getElevatorInstance() ; 
 	 
-	//Floor f = new Floor(); 
+	//Floor f = new Floor();
+	
+	@Test
+	public void testGetElevatorInstance(){
+		Elevator e2 = Elevator.getElevatorInstance() ;
+		assertEquals( e, e2 );
+	}
 	
 	@Test
 	public void testSetFloor() {
@@ -18,12 +24,7 @@ public class ElevatorTest {
 
 	@Test
 	public void testElevMove() {
-		
-			  assertEquals("up", e.elevMove(2));  ;
-		    	 
-		     
-	  
-	   
+		assertEquals("down", e.elevMove(2));  ;
 	}
 
 	@Test
@@ -35,7 +36,7 @@ public class ElevatorTest {
 
 	@Test
 	public void testCallElevator() {
-		   assertEquals("up", e.elevMove(2));  ;
+		   assertEquals("down", e.elevMove(2));  ;
 	}
 
 	@Test
