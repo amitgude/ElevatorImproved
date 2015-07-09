@@ -19,10 +19,6 @@ public class Elevator {
 		if ( instance == null){
 			instance = new Elevator();
 		}
-		else{
-			return instance;
-		}
-		
 		return instance;
 	}
 	
